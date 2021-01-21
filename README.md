@@ -7,6 +7,13 @@
 
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ennet)](https://CRAN.R-project.org/package=ennet)
+[![cran
+checks](https://cranchecks.info/badges/summary/ennet)](https://cran.r-project.org/web/checks/check_results_ennet.html)
+[![CRAN](https://img.shields.io/cran/l/ennet.svg)](https://CRAN.R-project.org/package=ennet)
+[![CRAN](http://cranlogs.r-pkg.org/badges/ennet)](https://CRAN.R-project.org/package=ennet)
+[![CRAN](http://cranlogs.r-pkg.org/badges/grand-total/ennet)](https://CRAN.R-project.org/package=ennet)
 [![R build
 status](https://github.com/katilingban/ennet/workflows/R-CMD-check/badge.svg)](https://github.com/katilingban/ennet/actions)
 [![R build
@@ -27,7 +34,7 @@ and analysis of text data from the online forum.
 
 ## What does `ennet` do?
 
-The `ennet` package has two key sets of functions:
+The `ennet` package has three key sets of functions:
 
 1.  The first set of functions facilitates the extraction of text data
     from the [**en-net** online forum](https://www.en-net.org).
@@ -35,6 +42,11 @@ The `ennet` package has two key sets of functions:
 2.  The second set of functions supports the analysis of the extracted
     datasets to produce summary measures and statistics of the
     [**en-net** online forum](https://www.en-net.org).
+
+3.  The third set of functions consists of data handling and processing
+    tools for use in the [en-net
+    database](https://github.com/katilingban/ennet_db) called
+    `ennet_db`.
 
 ## Installation
 
@@ -136,23 +148,32 @@ en-net](https://katilingban.io/ennet/articles/extract.html).
 
 The `ennet` package also includes analytic functions that summarises the
 text data available from the [**en-net** online
-forum](https://www.en-net.org). Currently, there are four analytic
-functions available from `ennet`:
+forum](https://www.en-net.org). Currently, there are four sets of
+analytic functions available from `ennet`:
 
-  - `count_topics` - function to count the number of topics or questions
-    by theme and date;
+  - `count_topics_time` functions - set of functions to count the number
+    of topics or questions by day, week, month or year;
 
-  - `count_authors` - function to count the number of topics attributed
-    to a specific author;
+  - `count_topics_theme` functions - set of functions to count the
+    number of topics or questions by theme;
 
-  - `arrange_views` - function to arrange topics by number of views;
-    and,
+  - `count_topics_author` functions - set of functions to count the
+    number of topics or questions by author; and,
 
-  - `arrange_replies` - function to arrange topics by number of replies.
+  - `arrange` functions - set of functions to arrange topics by number
+    of views or by number of replies.
 
 For a more detailed discussion of the analytics functions available from
 the `ennet` package, read [Summarising en-net online forum
 statistics](https://katilingban.io/ennet/articles/analytics.html).
+
+### The `ennet` database functions
+
+The `ennet` package includes database functions designed for use with
+the [en-net database](https://github.com/katilingban/ennet_db) called
+`ennet_db`. These database functions support the retrieval, handling and
+processing of datasets from the [**en-net** online
+forum](https://www.en-net.org) archived in the `ennet_db`.
 
 ### Utilities and datasets
 

@@ -20,17 +20,45 @@
 #' @importFrom xml2 read_html url_absolute
 #' @importFrom tibble tibble
 #' @importFrom dplyr bind_rows mutate first group_by count ungroup arrange
-#'   desc
+#'   desc filter starts_with summarise
 #' @importFrom stringr str_replace str_detect str_extract_all str_to_lower
 #'   str_replace_na str_remove_all
-#' @importFrom lubridate dmy_hm month year
+#' @importFrom lubridate dmy_hm month year ymd mday
+#' @importFrom utils read.csv
+#' @importFrom tidyr pivot_longer pivot_wider
 #'
 #
 ################################################################################
 "_PACKAGE"
 
 ## quiets concerns of R CMD check on global variables
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("Posted", "Month",
-                                                        "Theme", "Views",
-                                                        "Replies", "Author",
-                                                        "Year", "n"))
+if(getRversion() >= "2.15.1") {
+  utils::globalVariables(c("Posted", "Month", "Theme", "Views", "Replies",
+                           "Author", "Year", "n", "month_name", "week",
+                           "week_name", "year_name", "Extraction",
+                           "Extraction Date", "Interaction", "Link", "Topic",
+                           "nInteractions", "nPosts", "dailies", "weeklies",
+                           "monthlies", "Extraction Week", "Extraction Month",
+                           "Extraction Year", "Extraction.Date",
+                           "Extraction.Week", "Extraction.Month",
+                           "Extraction.Year", "New.Views", "New.Replies"))
+}
+
+
+################################################################################
+#
+#' Deprecated functions in ennet
+#'
+#' These functions still work but will be removed (defunct) in the next version
+#' of `ennet`.
+#'
+#' | **Function** | **Notes** |
+#' | :--- | :--- |
+#' | [count_topics()] | Please use [count_topics_theme()] instead |
+#' | [count_authors()] | Please use [count_topics_author()] instead |
+#'
+#' @name ennet-deprecated
+#'
+#
+################################################################################
+NULL

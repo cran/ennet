@@ -29,6 +29,9 @@ test_that("output has correct names", {
   expect_true(all(names(y) %in% c("Theme", "Month", "Year", "n")))
 })
 
+test_that("count_topics deprecation", {
+  expect_warning(count_topics(x), NULL)
+})
 
 ##
 y <- x %>%
@@ -43,7 +46,9 @@ test_that("output has correct names", {
 })
 
 test_that("output is in correct order", {
-  expect_true(all(diff(y[y$Theme == "Announcements & Nutritionists needed", ]$n) <= 0))
+  expect_true(
+    all(diff(y[y$Theme == "Announcements & Nutritionists needed", ]$n) <= 0)
+  )
 })
 
 y <- x %>%
@@ -70,7 +75,9 @@ test_that("output has correct names", {
 })
 
 test_that("output is in correct order", {
-  expect_true(all(diff(y[y$Theme == "Announcements & Nutritionists needed", ]$n) <= 0))
+  expect_true(
+    all(diff(y[y$Theme == "Announcements & Nutritionists needed", ]$n) <= 0)
+  )
 })
 
 y <- x %>%
@@ -84,6 +91,186 @@ test_that("output has correct names", {
   expect_true(all(names(y) %in% c("Theme", "Year", "n")))
 })
 
+## count_topics_day
+
+y <- x %>% count_topics_day()
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+y <- x %>% count_topics_day(.sort = TRUE)
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output is in correct order", {
+  expect_true(
+    all(diff(y$n) <= 0)
+  )
+})
+
+## count_topics_week
+
+y <- x %>% count_topics_week()
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+y <- x %>% count_topics_week(.sort = TRUE)
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output is in correct order", {
+  expect_true(
+    all(diff(y$n) <= 0)
+  )
+})
+
+## count_topics_month
+
+y <- x %>% count_topics_month()
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+y <- x %>% count_topics_month(.sort = TRUE)
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output is in correct order", {
+  expect_true(
+    all(diff(y$n) <= 0)
+  )
+})
+
+## count_topics_year
+
+y <- x %>% count_topics_year()
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+y <- x %>% count_topics_year(.sort = TRUE)
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output is in correct order", {
+  expect_true(
+    all(diff(y$n) <= 0)
+  )
+})
+
+## count_topics_theme
+
+y <- x %>% count_topics_theme()
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+y <- x %>% count_topics_theme(.sort = TRUE)
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output is in correct order", {
+  expect_true(
+    all(diff(y$n) <= 0)
+  )
+})
+
+## count_topics_theme_time - by day
+
+y <- x %>% count_topics_theme_time(by_time = "day")
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output names are correct", {
+  expect_true(all(names(y) %in% c("Theme", "day", "n")))
+})
+
+## count_topics_theme_time - by week
+
+y <- x %>% count_topics_theme_time(by_time = "week")
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output names are correct", {
+  expect_true(all(names(y) %in% c("Theme", "week", "week_name", "n")))
+})
+
+## count_topics_theme_time - by month
+
+y <- x %>% count_topics_theme_time(by_time = "month")
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output names are correct", {
+  expect_true(all(names(y) %in% c("Theme", "month", "month_name", "n")))
+})
+
+
+## count_topics_theme_time - by year
+
+y <- x %>% count_topics_theme_time(by_time = "year")
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output names are correct", {
+  expect_true(all(names(y) %in% c("Theme", "year", "year_name", "n")))
+})
+
+## count_topics_author
+
+y <- x %>% count_topics_author()
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+y <- x %>% count_topics_author(.sort = TRUE)
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output is in correct order", {
+  expect_true(
+    all(diff(y$n) <= 0)
+  )
+})
+
+## count_topics_author_time
+
+y <- x %>% count_topics_author_time(by_time = "day")
+
+test_that("output is tibble", {
+  expect_is(y, "tbl")
+})
+
+test_that("output names are correct", {
+  expect_true(all(names(y) %in% c("Author", "day", "n")))
+})
 
 ##
 y <- x %>% arrange_views()
@@ -97,7 +284,10 @@ test_that("output has correct names", {
                                   "Link", "Replies", "Month", "Year")))
 })
 
-z <- y %>% filter(Theme == "Adolescent nutrition", Month == "Jun", Year == "2018")
+z <- y %>%
+  filter(Theme == "Adolescent nutrition",
+         Month == "Jun",
+         Year == "2018")
 
 test_that("output is in correct order", {
   expect_true(all(diff(z$Views) <= 0))
