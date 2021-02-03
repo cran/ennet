@@ -2,7 +2,7 @@ Package: ennet
 Type: Package
 Title: Utilities to Extract and Analyse Text Data from the Emergency
         Nutrition Network Forum
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: person(given = "Ernest", family = "Guevarra", 
                   email = "ernest@guevarra.io", role = c("aut", "cre"),
                   comment = c(ORCID = "0000-0002-4887-4415"))
@@ -27,8 +27,8 @@ URL: https://katilingban.io/ennet/,
 BugReports: https://github.com/katilingban/ennet/issues
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2021-01-21 00:30:31 UTC; ernest
+Packaged: 2021-02-03 15:50:28 UTC; ernest
 Author: Ernest Guevarra [aut, cre] (<https://orcid.org/0000-0002-4887-4415>)
 Maintainer: Ernest Guevarra <ernest@guevarra.io>
 Repository: CRAN
-Date/Publication: 2021-01-21 05:30:07 UTC
+Date/Publication: 2021-02-03 16:20:02 UTC

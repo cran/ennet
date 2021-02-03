@@ -1,6 +1,6 @@
-72012608f8ef20570a6ee82da7e157ef *DESCRIPTION
+e660f68c4f17b51b0b169ba08a7979ca *DESCRIPTION
 8b34d428667672594c99295da365bf81 *NAMESPACE
-0f505442dc141cd5c95ba2ba003f8da6 *NEWS.md
+812bf137a1090ee7fe09bd47895c5c7a *NEWS.md
 95055e07e020eac7391614326066f3d0 *R/analytics.R
 f388b965f40e67803c5c0744da0a56ad *R/data.R
 04eeb612a40ff13dafacec613b275ee2 *R/database.R
@@ -8,7 +8,7 @@ e96b95e3ec6e38d68e8d6da1acadbed1 *R/ennet.R
 169ef13b33e3d6ba9b667b022690a8c1 *R/get_discussions.R
 e6031c3265a72b116766adab5daa606b *R/get_themes.R
 c24ad88e7c812302320b7e781ccc8313 *R/update_topics.R
-ad4a5e7f39a7ebf226b2b28583f789a8 *README.md
+0c138d22dbec82a75d7324aca7e02b63 *README.md
 d0563aceb55d16534fb9a0ed3496b132 *build/vignette.rds
 b05ae116927dcf92b1f8f5a945a76007 *data/ennet_dailies.rda
 5c5eaf2daaad2c45800a40d28a4e96de *data/ennet_hourlies.rda
@@ -17,13 +17,13 @@ a5a54a94bfee57a2d714f69c2e67b68b *data/ennet_topics.rda
 173fd115bb6d4a1e9a81c9f688cfd657 *inst/WORDLIST
 8254f0c0ccee157228399afa62290c95 *inst/doc/analytics.R
 d1e2f5d74cc09049654fb4fd3a360156 *inst/doc/analytics.Rmd
-46e4f2778ca75d3a9352f3c8b44c9376 *inst/doc/analytics.html
+52e070b11a89aef28b65eb1093264e20 *inst/doc/analytics.html
 e2cab93b4a86ea8913f0bfe01f3161b9 *inst/doc/ennet.R
 f56a53bd702719f43721f84b11c3f7fb *inst/doc/ennet.Rmd
 874eb2651ed119f4608b14c04f8e9ccc *inst/doc/ennet.html
 c44cf0898663abc403ba9d3f9ea41eb0 *inst/doc/extract.R
 2a3453dbbdd5acf7ced9b8508131b3e2 *inst/doc/extract.Rmd
-40655f6da6ca9320413441db9f2c1bd5 *inst/doc/extract.html
+abe9018e9f01aec04cb408f908ce40e8 *inst/doc/extract.html
 8c9b7b75acf465f04c244374a2b91bb5 *man/arrange_replies.Rd
 17c4ea23708081ebdc5e0f7eb67b1c61 *man/arrange_views.Rd
 fcbb42a343b86fc7ba2594d41cbea089 *man/count_authors.Rd
@@ -54,7 +54,7 @@ d739e38f229e4ea551ee0d48ded8f21d *man/get_themes_topics.Rd
 0622a97a2aaa3c342f09636052c2d7f5 *tests/spelling.R
 eb18b5ba248218623eb2104018c66187 *tests/testthat.R
 3db0d5b2024c36a8f2e8cec63009a175 *tests/testthat/test-analytics.R
-94aa58e915155e58b8842e07929ff636 *tests/testthat/test-database.R
+3418cfd895309dddfbec28a9840b615c *tests/testthat/test-database.R
 212af1afa62952fab6b002b5c3184727 *tests/testthat/test-get_discussions.R
 8deb9a5d995236813f5a1608b5b6bf1f *tests/testthat/test-get_themes.R
 4da51f4398840119472a4f44fb7aecea *tests/testthat/test-update_topics.R
