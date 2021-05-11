@@ -14,22 +14,7 @@
 
 <title>Summarising en-net online forum statistics</title>
 
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-});
-</script>
+<script src="data:application/javascript;base64,Ly8gUGFuZG9jIDIuOSBhZGRzIGF0dHJpYnV0ZXMgb24gYm90aCBoZWFkZXIgYW5kIGRpdi4gV2UgcmVtb3ZlIHRoZSBmb3JtZXIgKHRvCi8vIGJlIGNvbXBhdGlibGUgd2l0aCB0aGUgYmVoYXZpb3Igb2YgUGFuZG9jIDwgMi44KS4KZG9jdW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignRE9NQ29udGVudExvYWRlZCcsIGZ1bmN0aW9uKGUpIHsKICB2YXIgaHMgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJkaXYuc2VjdGlvbltjbGFzcyo9J2xldmVsJ10gPiA6Zmlyc3QtY2hpbGQiKTsKICB2YXIgaSwgaCwgYTsKICBmb3IgKGkgPSAwOyBpIDwgaHMubGVuZ3RoOyBpKyspIHsKICAgIGggPSBoc1tpXTsKICAgIGlmICghL15oWzEtNl0kL2kudGVzdChoLnRhZ05hbWUpKSBjb250aW51ZTsgIC8vIGl0IHNob3VsZCBiZSBhIGhlYWRlciBoMS1oNgogICAgYSA9IGguYXR0cmlidXRlczsKICAgIHdoaWxlIChhLmxlbmd0aCA+IDApIGgucmVtb3ZlQXR0cmlidXRlKGFbMF0ubmFtZSk7CiAgfQp9KTsK"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -41,21 +26,27 @@ document.addEventListener('DOMContentLoaded', function() {
     </style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -75,7 +66,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -133,187 +124,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<style type="text/css">body {
-background-color: #fff;
-margin: 1em auto;
-max-width: 700px;
-overflow: visible;
-padding-left: 2em;
-padding-right: 2em;
-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-size: 14px;
-line-height: 1.35;
-}
-#TOC {
-clear: both;
-margin: 0 0 10px 10px;
-padding: 4px;
-width: 400px;
-border: 1px solid #CCCCCC;
-border-radius: 5px;
-background-color: #f6f6f6;
-font-size: 13px;
-line-height: 1.3;
-}
-#TOC .toctitle {
-font-weight: bold;
-font-size: 15px;
-margin-left: 5px;
-}
-#TOC ul {
-padding-left: 40px;
-margin-left: -1.5em;
-margin-top: 5px;
-margin-bottom: 5px;
-}
-#TOC ul ul {
-margin-left: -2em;
-}
-#TOC li {
-line-height: 16px;
-}
-table {
-margin: 1em auto;
-border-width: 1px;
-border-color: #DDDDDD;
-border-style: outset;
-border-collapse: collapse;
-}
-table th {
-border-width: 2px;
-padding: 5px;
-border-style: inset;
-}
-table td {
-border-width: 1px;
-border-style: inset;
-line-height: 18px;
-padding: 5px 5px;
-}
-table, table th, table td {
-border-left-style: none;
-border-right-style: none;
-}
-table thead, table tr.even {
-background-color: #f7f7f7;
-}
-p {
-margin: 0.5em 0;
-}
-blockquote {
-background-color: #f6f6f6;
-padding: 0.25em 0.75em;
-}
-hr {
-border-style: solid;
-border: none;
-border-top: 1px solid #777;
-margin: 28px 0;
-}
-dl {
-margin-left: 0;
-}
-dl dd {
-margin-bottom: 13px;
-margin-left: 13px;
-}
-dl dt {
-font-weight: bold;
-}
-ul {
-margin-top: 0;
-}
-ul li {
-list-style: circle outside;
-}
-ul ul {
-margin-bottom: 0;
-}
-pre, code {
-background-color: #f7f7f7;
-border-radius: 3px;
-color: #333;
-white-space: pre-wrap; 
-}
-pre {
-border-radius: 3px;
-margin: 5px 0px 10px 0px;
-padding: 10px;
-}
-pre:not([class]) {
-background-color: #f7f7f7;
-}
-code {
-font-family: Consolas, Monaco, 'Courier New', monospace;
-font-size: 85%;
-}
-p > code, li > code {
-padding: 2px 0px;
-}
-div.figure {
-text-align: center;
-}
-img {
-background-color: #FFFFFF;
-padding: 2px;
-border: 1px solid #DDDDDD;
-border-radius: 3px;
-border: 1px solid #CCCCCC;
-margin: 0 5px;
-}
-h1 {
-margin-top: 0;
-font-size: 35px;
-line-height: 40px;
-}
-h2 {
-border-bottom: 4px solid #f7f7f7;
-padding-top: 10px;
-padding-bottom: 2px;
-font-size: 145%;
-}
-h3 {
-border-bottom: 2px solid #f7f7f7;
-padding-top: 10px;
-font-size: 120%;
-}
-h4 {
-border-bottom: 1px solid #f7f7f7;
-margin-left: 8px;
-font-size: 105%;
-}
-h5, h6 {
-border-bottom: 1px solid #ccc;
-font-size: 105%;
-}
-a {
-color: #0033dd;
-text-decoration: none;
-}
-a:hover {
-color: #6666ff; }
-a:visited {
-color: #800080; }
-a:visited:hover {
-color: #BB00BB; }
-a[href^="http:"] {
-text-decoration: underline; }
-a[href^="https:"] {
-text-decoration: underline; }
-
-code > span.kw { color: #555; font-weight: bold; } 
-code > span.dt { color: #902000; } 
-code > span.dv { color: #40a070; } 
-code > span.bn { color: #d14; } 
-code > span.fl { color: #d14; } 
-code > span.ch { color: #d14; } 
-code > span.st { color: #d14; } 
-code > span.co { color: #888888; font-style: italic; } 
-code > span.ot { color: #007020; } 
-code > span.al { color: #ff0000; font-weight: bold; } 
-code > span.fu { color: #900; font-weight: bold; } 
-code > span.er { color: #a61717; background-color: #e3d2d2; } 
-</style>
+<link rel="stylesheet" href="data:text/css,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" type="text/css" />
 
 
 
@@ -342,11 +153,11 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="counting-number-of-topicsquestions-by-time" class="section level3">
 <h3>Counting number of topics/questions by time</h3>
 <p>The <code>count_topics_time</code> set of functions consist of four functions that count topics by <em>day</em>, by <em>week</em>, by <em>month</em>, or by <em>year</em>. To count the number of topics/questions per day, the <code>count_topics_day</code> function is used as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">count_topics_day</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_day</span>()</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,806 x 2
 #&gt;    day            n
-#&gt;  * &lt;date&gt;     &lt;int&gt;
+#&gt;    &lt;date&gt;     &lt;int&gt;
 #&gt;  1 2009-02-14     1
 #&gt;  2 2009-02-18     1
 #&gt;  3 2009-02-19     2
@@ -359,7 +170,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 2009-03-07     1
 #&gt; # … with 1,796 more rows</code></pre>
 <p>By default, the <code>count_topics_day</code> function will provide an output that is not sorted by number of topics/questions per day. To sort by number of topics/questions per day, specify <code>.sort</code> as <code>TRUE</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">count_topics_day</span>(<span class="dt">.sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_day</span>(<span class="at">.sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>which gives the following output:</p>
 <pre><code>#&gt; # A tibble: 1,806 x 2
 #&gt;    day            n
@@ -376,20 +187,20 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 2016-11-11     6
 #&gt; # … with 1,796 more rows</code></pre>
 <p>Counting topics/questions by week, month, or year require just using the function named after the time required. For weekly counts, use <code>count_topics_week</code>, for monthly use <code>count_topics_month</code>, and for yearly use <code>count_topics_year</code>.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">## Count topics/questions by week</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">count_topics_week</span>()</span>
-<span id="cb5-3"><a href="#cb5-3"></a></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="co">## Count topics/questions by month</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="kw">count_topics_month</span>()</span>
-<span id="cb5-6"><a href="#cb5-6"></a></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">## Count topics/questions by year</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="kw">count_topics_year</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by week</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_week</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by month</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_month</span>()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by year</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_year</span>()</span></code></pre></div>
 </div>
 <div id="counting-number-of-topicsquestions-by-theme" class="section level3">
 <h3>Counting number of topics/questions by theme</h3>
 <p>The <code>count_topics_theme</code> set of functions consists of two functions that count topics/questions <em>by theme</em>, and count topics/questions <em>by theme and by time</em>.</p>
 <p>Counting of topics by theme is specified as follows:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">count_topics_theme</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_theme</span>()</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 18 x 2
 #&gt;    Theme                                                              n
@@ -413,31 +224,31 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 17 Simplified Approaches for the Management of Acute Malnutrition    11
 #&gt; 18 Multi-sector nutrition programming                                 3</code></pre>
 <p>Results provided by <code>count_topics_theme</code> is not sorted by number of topics/questions. To sort, specify <code>.sort</code> as <code>TRUE</code>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">count_topics_theme</span>(<span class="dt">.sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_theme</span>(<span class="at">.sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 18 x 2
 #&gt;    Theme                                                              n
 #&gt;    &lt;chr&gt;                                                          &lt;int&gt;
-#&gt;  1 Announcements &amp; Nutritionists needed                            1246
-#&gt;  2 Management of wasting/acute malnutrition                         539
-#&gt;  3 Assessment and Surveillance                                      458
-#&gt;  4 Infant and young child feeding interventions                     206
-#&gt;  5 Coverage assessment                                               94
-#&gt;  6 Upcoming trainings                                                93
-#&gt;  7 COVID-19 and nutrition programming                                85
-#&gt;  8 Micronutrients                                                    55
-#&gt;  9 Other thematic area                                               52
-#&gt; 10 Scaling Up Nutrition (SUN)                                        51
-#&gt; 11 Cross-cutting issues                                              47
+#&gt;  1 Announcements &amp; Nutritionists needed                            1279
+#&gt;  2 Management of wasting/acute malnutrition                         548
+#&gt;  3 Assessment and Surveillance                                      461
+#&gt;  4 Infant and young child feeding interventions                     215
+#&gt;  5 Upcoming trainings                                                97
+#&gt;  6 Coverage assessment                                               95
+#&gt;  7 COVID-19 and nutrition programming                                87
+#&gt;  8 Micronutrients                                                    56
+#&gt;  9 Other thematic area                                               54
+#&gt; 10 Scaling Up Nutrition (SUN)                                        52
+#&gt; 11 Cross-cutting issues                                              48
 #&gt; 12 Food assistance                                                   32
-#&gt; 13 Management of At Risk Mothers and Infants                         28
-#&gt; 14 Prevention and management of stunting                             21
-#&gt; 15 Partnerships for research                                         18
-#&gt; 16 Adolescent nutrition                                              14
-#&gt; 17 Simplified Approaches for the Management of Acute Malnutrition    11
+#&gt; 13 Management of At Risk Mothers and Infants                         31
+#&gt; 14 Adolescent nutrition                                              28
+#&gt; 15 Prevention and management of stunting                             21
+#&gt; 16 Partnerships for research                                         19
+#&gt; 17 Simplified Approaches for the Management of Acute Malnutrition    12
 #&gt; 18 Multi-sector nutrition programming                                 3</code></pre>
 <p>Counting of topics/questions by theme can also be done by time using the <code>count_topics_theme_time</code>. For example, counting topics/questions by theme by day is done as follows:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">count_topics_theme_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_theme_time</span>(<span class="at">by_time =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
 <p>which gives the following output:</p>
 <pre><code>#&gt; # A tibble: 2,496 x 3
 #&gt;    Theme                                day            n
@@ -455,20 +266,20 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; # … with 2,486 more rows</code></pre>
 <p>Unlike the previous count functions, the output of <code>count_topics_theme_time</code> is already sorted by default.</p>
 <p>To count topics/questions by theme by week, month, or year just requires changing the <code>by_time</code> argument to the desired time interval as shown below:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">## Count topics/questions by theme by week</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">count_topics_theme_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;week&quot;</span>)</span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="co">## Count topics/questions by theme by month</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="kw">count_topics_theme_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;month&quot;</span>)</span>
-<span id="cb12-6"><a href="#cb12-6"></a></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="co">## Count topics/questions by theme by year</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="kw">count_topics_theme_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by theme by week</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_theme_time</span>(<span class="at">by_time =</span> <span class="st">&quot;week&quot;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by theme by month</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_theme_time</span>(<span class="at">by_time =</span> <span class="st">&quot;month&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by theme by year</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_theme_time</span>(<span class="at">by_time =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
 </div>
 <div id="counting-number-of-topicsquestions-by-author" class="section level3">
 <h3>Counting number of topics/questions by author</h3>
 <p>The <code>count_topics_author</code> set of functions consists of two functions that count topics/questions <em>by author</em>, and count topics/questions <em>by author and by time</em>.</p>
 <p>Counting of topics by author is specified as follows:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">count_topics_author</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_author</span>()</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,110 x 2
 #&gt;    Author                              n
@@ -485,7 +296,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Nutrition International - NTEAM    32
 #&gt; # … with 1,100 more rows</code></pre>
 <p>Results provided by <code>count_topics_author</code> is not sorted by number of topics/questions. To sort, specify <code>.sort</code> as <code>TRUE</code>:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">count_topics_author</span>(<span class="dt">.sort =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_author</span>(<span class="at">.sort =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,110 x 2
 #&gt;    Author                              n
@@ -502,7 +313,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Nutrition International - NTEAM    32
 #&gt; # … with 1,100 more rows</code></pre>
 <p>Counting of topics/questions by author can also be done by time using the <code>count_topics_author_time</code>. For example, counting topics/questions by author by day is done as follows:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">count_topics_author_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_author_time</span>(<span class="at">by_time =</span> <span class="st">&quot;day&quot;</span>)</span></code></pre></div>
 <p>which gives the following output:</p>
 <pre><code>#&gt; # A tibble: 2,750 x 3
 #&gt;    Author            day            n
@@ -520,14 +331,14 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; # … with 2,740 more rows</code></pre>
 <p>Unlike the previous count functions, the output of <code>count_topics_author_time</code> is already sorted by default.</p>
 <p>To count topics/questions by author by week, month, or year just requires changing the <code>by_time</code> argument to the desired time interval as shown below:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="co">## Count topics/questions by author by week</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">count_topics_author_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;week&quot;</span>)</span>
-<span id="cb19-3"><a href="#cb19-3"></a></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co">## Count topics/questions by author by month</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="kw">count_topics_author_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;month&quot;</span>)</span>
-<span id="cb19-6"><a href="#cb19-6"></a></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co">## Count topics/questions by author by year</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="kw">count_topics_author_time</span>(<span class="dt">by_time =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by author by week</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_author_time</span>(<span class="at">by_time =</span> <span class="st">&quot;week&quot;</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by author by month</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_author_time</span>(<span class="at">by_time =</span> <span class="st">&quot;month&quot;</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Count topics/questions by author by year</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">count_topics_author_time</span>(<span class="at">by_time =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
 </div>
 <div id="deprecated-count-functions" class="section level3">
 <h3>Deprecated <code>count</code> functions</h3>
@@ -542,9 +353,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="arranging-topics-by-number-of-views" class="section level2">
 <h2>Arranging topics by number of views</h2>
 <p>Summarising the number of topics or questions raised within the <a href="https://www.en-net.org"><strong>en-net</strong> online forum</a> by arranging them based on number of views can proxy level of interest to a specific topic by those participating in the forum. This is facilitated using the <code>arrange_views</code> function. Ranking of topics by number of views is done per thematic area and by a specific time period. Ranking of topics by number of views by thematic area and by month and year is performed by default:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="st">  </span><span class="kw">arrange_views</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_views</span>()</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 3,045 x 9
 #&gt;    Theme   Topic          Views Author  Posted     Link      Replies Month  Year
@@ -561,9 +372,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Adoles… Assessing nut…  2050 Ursula… 2018-07-25 https://…       3 Jul    2018
 #&gt; # … with 3,035 more rows</code></pre>
 <p>Arranging topics by number of views by thematic area and by year is performed as follows:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb22-2"><a href="#cb22-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3"></a><span class="st">  </span><span class="kw">arrange_views</span>(<span class="dt">by_date =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_views</span>(<span class="at">by_date =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 3,045 x 9
 #&gt;    Theme    Topic        Views Author  Posted     Link       Replies Month  Year
@@ -580,9 +391,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Adolesc… MUAC tape f…  1850 Anonym… 2018-09-27 https://w…       1 Sep    2018
 #&gt; # … with 3,035 more rows</code></pre>
 <p>Arranging topics by number of views by thematic area overall across the years is performed as follows:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb24-2"><a href="#cb24-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb24-3"><a href="#cb24-3"></a><span class="st">  </span><span class="kw">arrange_views</span>(<span class="dt">by_date =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_views</span>(<span class="at">by_date =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 3,045 x 9
 #&gt;    Theme    Topic        Views Author  Posted     Link       Replies Month  Year
@@ -599,9 +410,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Adolesc… MUAC tape f…  1850 Anonym… 2018-09-27 https://w…       1 Sep    2018
 #&gt; # … with 3,035 more rows</code></pre>
 <p>By default, the output of <code>arrange_views</code> is grouped by thematic area. This default behaviour can be changed by setting the <code>by_theme</code> argument to <code>FALSE</code>. For example, to arrange the topics by number of views by month and year across all themes:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="st">  </span><span class="kw">arrange_views</span>(<span class="dt">by_theme =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_views</span>(<span class="at">by_theme =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 3,045 x 9
 #&gt;    Theme      Topic         Views Author Posted     Link     Replies Month  Year
@@ -621,9 +432,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div id="arranging-topics-by-number-of-replies" class="section level2">
 <h2>Arranging topics by number of replies</h2>
 <p>Summarising the number of topics or questions raised within the <a href="https://www.en-net.org"><strong>en-net</strong> online forum</a> by arranging them based on number of replies can proxy level of interest to a specific topic by those participating in the forum specifically those who provide responses and feedback to responses within the discussion. This is facilitated using the <code>arrange_replies</code> function. Ranking of topics by number of replies is done per thematic area and by a specific time period. Ranking of topics by number of replies by thematic area and by month and year is performed by default:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb28-3"><a href="#cb28-3"></a><span class="st">  </span><span class="kw">arrange_replies</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_replies</span>()</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,800 x 9
 #&gt;    Theme   Topic          Views Author  Posted     Link      Replies Month  Year
@@ -640,9 +451,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Adoles… Assessing nut…  2050 Ursula… 2018-07-25 https://…       3 Jul    2018
 #&gt; # … with 1,790 more rows</code></pre>
 <p>Arranging topics by number of replies by thematic area and by year is performed as follows:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb30-3"><a href="#cb30-3"></a><span class="st">  </span><span class="kw">arrange_replies</span>(<span class="dt">by_date =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_replies</span>(<span class="at">by_date =</span> <span class="st">&quot;year&quot;</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,800 x 9
 #&gt;    Theme    Topic        Views Author  Posted     Link       Replies Month  Year
@@ -659,9 +470,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Adolesc… health educ…  1728 Anonym… 2018-06-19 https://w…       1 Jun    2018
 #&gt; # … with 1,790 more rows</code></pre>
 <p>Arranging topics by number of replies by thematic area overall across the years is performed as follows:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="st">  </span><span class="kw">arrange_replies</span>(<span class="dt">by_date =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_replies</span>(<span class="at">by_date =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,800 x 9
 #&gt;    Theme   Topic          Views Author  Posted     Link      Replies Month  Year
@@ -678,9 +489,9 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 #&gt; 10 Adoles… adolescent ma…  2057 Anonym… 2018-06-21 https://…       1 Jun    2018
 #&gt; # … with 1,790 more rows</code></pre>
 <p>By default, the output of <code>arrange_replies</code> is grouped by thematic area. This default behaviour can be changed by setting the <code>by_theme</code> argument to <code>FALSE</code>. For example, to arrange the topics by number of replies by month and year across all themes:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">get_themes</span>() <span class="op">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a><span class="st">  </span><span class="kw">get_themes_topics</span>() <span class="op">%&gt;%</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a><span class="st">  </span><span class="kw">arrange_replies</span>(<span class="dt">by_theme =</span> <span class="ot">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get_themes</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_themes_topics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange_replies</span>(<span class="at">by_theme =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>which results in:</p>
 <pre><code>#&gt; # A tibble: 1,800 x 9
 #&gt;    Theme     Topic         Views Author  Posted     Link     Replies Month  Year
